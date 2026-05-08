@@ -19,23 +19,15 @@
  *                                                                         *
  ***************************************************************************/
 """
+
 from pathlib import Path
 
-from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication, QTimer, QFileInfo
-from qgis.PyQt.QtGui import *
+from qgis.core import QgsProject
+from qgis.PyQt.QtCore import QCoreApplication, QFileInfo, QSettings, QTimer, QTranslator
 from qgis.PyQt.QtGui import QIcon
-
-from qgis.PyQt.QtWidgets import QAction
-
-
-from qgis.PyQt import uic
-
-from qgis.PyQt.QtWidgets import QAction
-
-
-from qgis.core import *
+from qgis.PyQt.QtWidgets import QAction, QMessageBox
 from qgis.utils import plugins
-import qgis
+
 # Import the code for the dialog
 from .autosave_dialog import autoSaverDialog
 import os.path
@@ -425,7 +417,7 @@ class autoSaver:
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
         # See if OK was pressed
         if result:
             # Do something useful here - delete the line containing pass and
