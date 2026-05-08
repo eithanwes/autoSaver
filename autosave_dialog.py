@@ -20,11 +20,12 @@
  ***************************************************************************/
 """
 
-from qgis.PyQt.QtWidgets import QDialog
-from qgis.PyQt import uic
 from pathlib import Path
 
-ui_file = Path(__file__).resolve().parent / 'ui_autosave_dialog_base.ui'
+from qgis.PyQt import uic
+from qgis.PyQt.QtWidgets import QDialog
+
+ui_file = Path(__file__).resolve().parent / "ui_autosave_dialog_base.ui"
 ui_class, _ = uic.loadUiType(ui_file)
 
 

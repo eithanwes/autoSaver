@@ -31,4 +31,5 @@ def classFactory(iface):  # pylint: disable=invalid-name
     """
     #
     from .autosave import autoSaver
+
     return autoSaver(iface)
